@@ -21,11 +21,24 @@
     input.setAttribute("style", "font-size:18px;position:absolute;top:120px;right:40px;");
     document.body.appendChild(input);
   }
+
+  function getDownloadLinks(){
+    var els = document.querySelectorAll("a[href^='http://cdn.daweijita.com']");
+    for (var i = 0, l = els.length; i < l; i++) {
+      var el = els[i];
+      //el.innerHTML = el.innerHTML.replace(/link/gi, 'dead link');
+      window.open(el.href);
+    }
+  }
+
   function showAlert() {
     if (tabPageMatch != null) {
-      alert("in guitar page. Pageid:"+tabPageMatch[1]);
-    }else{
-      alert("on main page");
+      if(confirm("in guitar page. Pageid:" + tabPageMatch[1]+"\n Open sheets in new tabs?")){
+        // alert("opening.");
+        getDownloadLinks();
+      }else{
+        alert("not opening.");
+      }
     }
   }
 
