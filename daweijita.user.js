@@ -36,8 +36,6 @@
       if(confirm("in guitar page. Pageid:" + tabPageMatch[1]+"\n Open sheets in new tabs?")){
         // alert("opening.");
         getDownloadLinks();
-      }else{
-        alert("not opening.");
       }
     }
   }
